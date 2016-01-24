@@ -1,0 +1,132 @@
+body {
+    height: 1000px;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    background-color: ivory;
+}
+
+
+/*====== Sidebar========= */
+
+.sidebar {
+    background-color: #343642;
+    padding-right: 16.5em;
+    position: fixed;
+    height: 100%;
+    z-index: 2;
+}
+
+.sidebar div.hero {
+    border-bottom: 3px solid #ccc;
+}
+
+.sidebar div.hero,
+.sidebar .footer {
+    background-color: #F0444C;
+    width: 15.5em;
+    position: relative;
+}
+
+.sidebar div.hero h1 {
+    font-family: 'Permanent Marker', cursive;
+    color: #fff;
+    padding: .1em 0;
+    margin: 0;
+    text-align: center;
+}
+
+.sidebar .links {
+    list-style-type: none;
+    width: 15.5em;
+    margin-top: 6em;
+}
+
+.sidebar .links ul {
+    list-style-type: none;
+    margin-left: 0;
+}
+
+.links ul li a {
+    display: block;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5em;
+    padding: .5em 2em;
+    text-align: center;
+    color: #fff;
+    margin: .5em 0;
+}
+
+.links ul li a::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 0;
+    background-color: #F0444C;
+    transition: width .3s ease;
+}
+
+.links ul li a:hover::after {
+    width: 100%;
+}
+
+.sidebar .footer {
+    position: absolute;
+    bottom: 0;
+}
+
+.sidebar .footer h2 {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+
+/*================ */
+
+.projects {
+    float: right;
+}
+
+.row {
+    align-content: space-around;
+    display: flex-wrap;
+}
+
+.projects .card {
+    background-color: #ccc;
+    margin: .75em;
+    padding: .5em;
+    transition: .2s ease all;
+    opacity: 1;
+}
+
+
+/*enter projects*/
+
+.projects .card.ng-enter {
+    transition: .8s ease all;
+    opacity: 0;
+    position: relative;
+    top: 1em;
+}
+
+.projects .card.ng-enter-active {
+    opacity: 1;
+    top: 0;
+}
+/*----------------*/
+
+/*leave projects*/
+
+.projects .card.ng-leave {
+    transition: 0.2s linear all;
+    opacity: 1;
+}
+
+.projects .card.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+/*----------------*/
+
+.columns:last-child:not(:first-child) {
+    float: left;
+}

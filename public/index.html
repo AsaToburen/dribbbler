@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>InstaSlide</title>
+    <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
+    <link href='https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/foundation.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    
+</head>
+
+<body ng-app="BrowseDribbble" ng-controller="main">
+    <aside class="small-4 medium-2 columns sidebar">
+        <div class="hero">
+            <h1>Dribbbler</h1>
+        </div>
+        <div class="links">
+            <ul>
+                <li>
+                    <a ng-click="getShots()">Shots</a>
+                </li>
+                <li>
+                    <a ng-click="getAnimated()">Animated</a>
+                </li>
+                <li>
+                    <a ng-click="getDebuts()">Debuts</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <h2>Created by Asa Toburen.</h2>
+        </div>
+    </aside>
+    <div class="projects medium-9 columns">
+        <div class="small-5 columns card" ng-repeat="item in latest">
+            <img ng-src="{{item.images.normal}}" alt="">
+        </div>
+    </div>
+    <script src="./vendor/angular.min.js"></script>
+    <script src="./vendor/angular-animate.min.js"></script>
+    <script src="./app.module.js"></script>
+    <script src="./js/dribbble.service.js"></script>
+</body>
+
+</html>
